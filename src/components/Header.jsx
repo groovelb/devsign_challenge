@@ -1,29 +1,45 @@
 import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import Link from "@mui/material/Link";
 import IconButton from "@mui/material/IconButton";
 import Avatar from "@mui/material/Avatar";
 import AppsIcon from "@mui/icons-material/Apps";
 
 function Header() {
-  return (
-    <AppBar position="static" elevation={0} color="transparent">
-      <Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
-        <Button color="inherit" sx={{ textTransform: "none" }}>
-          Gmail
-        </Button>
-        <Button color="inherit" sx={{ textTransform: "none" }}>
-          Images
-        </Button>
-        <IconButton color="inherit" aria-label="apps">
-          <AppsIcon />
-        </IconButton>
-        <IconButton color="inherit" aria-label="profile">
-          <Avatar sx={{ width: 32, height: 32 }}>A</Avatar>
-        </IconButton>
-      </Toolbar>
-    </AppBar>
-  );
+	return (
+		<AppBar
+			position="static"
+			color="transparent"
+			elevation={0}
+			sx={{
+				display: "flex",
+				flexDirection: "row",
+				justifyContent: "space-between",
+				p: 2,
+			}}
+		>
+			<Box sx={{ display: "flex", gap: 2 }}>
+				<Link href="#" color="inherit" underline="none">
+					Google 정보
+				</Link>
+				<Link href="#" color="inherit" underline="none">
+					스토어
+				</Link>
+			</Box>
+			<Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+				<Link href="#" color="inherit" underline="none">
+					Gmail
+				</Link>
+				<Link href="#" color="inherit" underline="none">
+					이미지
+				</Link>
+				<IconButton>
+					<AppsIcon />
+				</IconButton>
+				<Avatar alt="User Profile" src="/static/images/avatar.png" />
+			</Box>
+		</AppBar>
+	);
 }
 
-export default Header; 
+export default Header;
